@@ -9,7 +9,7 @@ function App() {
   const [timestamp, setTimestamp] = useState<string | null>(null);
   return (
     <TimestampContext.Provider value={{ timestamp, setTimestamp }}>
-      <div className="min-h-screen bg-gray-50 text-gray-900">
+      <div className="min-h-screen text-gray-900">
         <header>
           <h1 className="mb-4 bg-teal-100 p-4 text-center text-2xl">
             Battery Management System
