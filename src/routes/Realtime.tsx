@@ -26,25 +26,25 @@ function Realtime() {
     <p>Loading...</p>
   ) : (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-      <Card title="Battery Status">
-        <BatteryGauge value={data.general[0].avg_soc} />
-        <div>
-          <DataItem
-            className="row-start-2"
-            label="Total Voltage"
-            variable={Variable.VOLTAGE}
-            value={data.general[0].total_voltage}
-            variant="horizontal"
-          />
-          <DataItem
-            className="row-start-2"
-            label="Total Current"
-            variable={Variable.CURRENT}
-            value={data.current}
-            variant="horizontal"
-          />
-        </div>
-      </Card>
+      {/* <Card title="Battery Status"> */}
+      <BatteryGauge value={data.general[0].avg_soc} />
+      <div>
+        <DataItem
+          className="row-start-2"
+          label="Total Voltage"
+          variable={Variable.VOLTAGE}
+          value={data.general[0].total_voltage}
+          variant="horizontal"
+        />
+        <DataItem
+          className="row-start-2"
+          label="Total Current"
+          variable={Variable.CURRENT}
+          value={data.current}
+          variant="horizontal"
+        />
+      </div>
+      {/* </Card> */}
       <div className="grid grid-rows-3 gap-6 sm:grid-cols-3 sm:grid-rows-none">
         <DataInfo
           variable={Variable.VOLTAGE}

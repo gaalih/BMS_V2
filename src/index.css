@@ -4,13 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .text-blue-custom {
   color: #294285;
 }
 
 body {
   font-family: 'Albert Sans', sans-serif;
+  @apply bg-[#ECF2F7];
+}
+
+.bg-default {
   @apply bg-[#ECF2F7];
 }
 /* .main-content .card-main { */

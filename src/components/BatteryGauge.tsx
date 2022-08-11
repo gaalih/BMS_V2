@@ -1,45 +1,85 @@
-import { getBatteryFill } from 'lib/battery';
-import { classNames, Props } from 'lib/utils';
+import { getBatteryColor } from 'lib/battery';
+import { Props } from 'lib/utils';
+import {
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 interface BatteryGaugeProps extends Props {
   value: number;
+  // detail: number;
+  // value: { [key: string]: number };
+  // detail: { [key: string]: number };
+  // variable: { [key: string]: string };
 }
 
 function BatteryGauge({ value }: BatteryGaugeProps) {
-  const [fgFill, bgFill] = getBatteryFill(value);
+  // value = 25;
+  // const [fgFill, bgFill] = getBatteryFill(value);
+  const capacity = value;
+  const bcolor = getBatteryColor(capacity);
+
+  // total_voltage
+  // current
   return (
-    <div aria-hidden className="mx-4">
-      {/* Background fill */}
-      <div className={classNames(bgFill, 'relative h-20 w-52 lg:w-72')}>
-        {/* Foreground fill */}
-        <div
-          style={{ width: `${value}%` }}
-          className={classNames(fgFill, 'h-full')}
-        />
-
-        {/* Battery cap */}
-        <div
-          className={classNames(
-            bgFill,
-            'absolute inset-y-1/2 left-52 h-8 w-2.5 -translate-y-1/2 rounded-tr-md rounded-br-md lg:left-72'
-          )}
-        />
-      </div>
-
-      {/* Axis */}
-      <div className="mt-1 grid w-52 cursor-default grid-cols-4 border-t-[1.5px] border-gray-400 text-sm lg:w-72">
-        <div className="h-1.5 border-l-[1.5px] border-gray-400"></div>
-        <div className="h-1.5 border-l-[1.5px] border-gray-400"></div>
-        <div className="h-1.5 border-l-[1.5px] border-gray-400"></div>
-        <div className="h-1.5 border-x-[1.5px] border-gray-400"></div>
-      </div>
-
-      <div className="relative flex h-4 cursor-default select-none text-sm">
-        <div className="absolute left-0 -translate-x-1/2">0%</div>
-        <div className="absolute left-1/4 -translate-x-1/2">25%</div>
-        <div className="absolute left-1/2 -translate-x-1/2">50%</div>
-        <div className="absolute left-3/4 -translate-x-1/2">75%</div>
-        <div className="absolute left-full -translate-x-1/2">100%</div>
+    <div className="shadow-embross card w-full bg-transparent">
+      <div className="card-body -mt-3">
+        <h2 className="card-title mb-7 text-sm font-medium tracking-wide text-sky-900">
+          Battery Status
+        </h2>
+        <div className="-mt-3 flex justify-center">
+          <div className="w-5/6">
+            <CircularProgressbarWithChildren
+              value={capacity}
+              circleRatio={0.75}
+              background
+              backgroundPadding={6}
+              className="shadow-embross bg-default rounded-full"
+              styles={buildStyles({
+                backgroundColor: 'transparent',
+                rotation: 1 / 2 + 1 / 8,
+                strokeLinecap: 'round',
+                pathColor: bcolor,
+                trailColor: '#e4e4e7',
+                textSize: '1em',
+                pathTransitionDuration: 1,
+              })}
+            >
+              <div className="flex justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-12 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke={bcolor}
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <div className="mt-1 text-center ">
+                <p className="text-bold -mb-1 block text-xl font-bold text-sky-800">
+                  {capacity}
+                  <span className="text-lg font-normal"> %</span>
+                </p>
+                <small className="text-xs">
+                  {capacity == 100 ? (
+                    <span className="text-lime-500">Full Capacity</span>
+                  ) : capacity <= 20 ? (
+                    <span className="text-red-500">Low Capacity</span>
+                  ) : (
+                    ''
+                  )}
+                </small>
+              </div>
+            </CircularProgressbarWithChildren>
+          </div>
+        </div>
       </div>
     </div>
   );

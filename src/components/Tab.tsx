@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 function Tab() {
   const { timestamp } = useContext(TimestampContext);
   return (
-    <div className="">
-      <div className="tabs tabs-boxed gap-4">
+    <div>
+      <div className="tabs tabs-boxed hidden gap-4 sm:inline">
         <NavLink
           to="realtime"
           className={({ isActive }) => `${isActive ? 'tab-active' : ''} tab`}
@@ -23,7 +23,11 @@ function Tab() {
       <div className="navigasi-mobile sm:hidden">
         <div className="btm-nav z-40 bg-white"></div>
         <div className="btm-nav z-50 h-28 bg-transparent shadow-md">
-          <div></div>
+          <div className="-mr-2 pt-14">
+            <p className="px-8 text-xs leading-3 text-slate-500">
+              Battery Management System
+            </p>
+          </div>
           <div className="placeholder avatar z-10 ">
             <div className="focus text-grey-500 w-24 rounded-full bg-slate-100 pt-2 shadow-lg">
               <NavLink
@@ -32,7 +36,7 @@ function Tab() {
                   `${isActive ? 'text-cyan-500' : 'text-slate-500'}`
                 }
               >
-                <div className="-mb-2 flex justify-center">
+                <div className="flex flex-col justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-12 w-12"
@@ -45,8 +49,10 @@ function Tab() {
                       clip-rule="evenodd"
                     />
                   </svg>
+                  <span className="text-2xs btm-nav-label -mt-1 text-center">
+                    realtime
+                  </span>
                 </div>
-                <span className="text-2xs btm-nav-label">realtime</span>
               </NavLink>
             </div>
           </div>
@@ -76,8 +82,24 @@ function Tab() {
       </div>{' '}
       {/* end navigasi mobile */}
       {timestamp && (
-        <div className="ml-auto rounded-md bg-teal-100 px-4 py-2 font-medium shadow">
-          {timestamp}
+        <div className="flex justify-end">
+          <div className="bg-default shadow-embross alert ml-auto w-1/2 rounded px-4 py-2 text-xs font-medium text-sky-900">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="h-5 w-5 flex-shrink-0 stroke-sky-900"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span>{timestamp}</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

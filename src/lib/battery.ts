@@ -65,3 +65,22 @@ export function getBatteryFill(soc: number): [string, string] {
   }
   throw Error("Props 'soc' out of bounds");
 }
+
+export function getBatteryColor(soc: number): string {
+  if (soc >= 0 && soc < 25) {
+    return '#ef4444';
+  }
+  if (soc >= 25 && soc < 40) {
+    return '#f59e0b';
+  }
+  if (soc >= 40 && soc < 75) {
+    return '#fbbf24';
+  }
+  if (soc >= 75 && soc < 85) {
+    return '#A3CB38';
+  }
+  if (soc >= 85 && soc <= 100) {
+    return '#84cc16';
+  }
+  throw Error("Props 'soc' out of bounds");
+}
