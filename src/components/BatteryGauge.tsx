@@ -23,9 +23,9 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
   // total_voltage
   // current
   return (
-    <div className="shadow-embross card w-full bg-transparent">
-      <div className="card-body -mt-3">
-        <h2 className="card-title mb-7 text-sm font-medium tracking-wide text-sky-900">
+    <div className="card w-full ">
+      <div className="card-body -mt-7">
+        <h2 className="flex justify-center card-title mb-5 text-xs text-center font-bold tracking-wider text-slate-500">
           Battery Status
         </h2>
         <div className="-mt-3 flex justify-center">
@@ -35,7 +35,7 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
               circleRatio={0.75}
               background
               backgroundPadding={6}
-              className="shadow-embross bg-default rounded-full"
+              className="shadow-xl shadow-slate-300 bg-default rounded-full"
               styles={buildStyles({
                 backgroundColor: 'transparent',
                 rotation: 1 / 2 + 1 / 8,
@@ -68,7 +68,7 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
                   <span className="text-lg font-normal"> %</span>
                 </p>
                 <small className="text-xs">
-                  {capacity == 100 ? (
+                  {capacity === 100 ? (
                     <span className="text-lime-500">Full Capacity</span>
                   ) : capacity <= 20 ? (
                     <span className="text-red-500">Low Capacity</span>

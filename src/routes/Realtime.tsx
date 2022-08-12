@@ -3,7 +3,8 @@ import BatteryCell from 'components/BatteryCell';
 import BatteryGauge from 'components/BatteryGauge';
 import Card from 'components/Card';
 import DataInfo from 'components/DataInfo';
-import DataItem from 'components/DataItem';
+// import DataItem from 'components/DataItem';
+import { decode } from 'html-entities';
 import { Data, Variable } from 'lib/battery';
 import { fetchRealtime } from 'lib/utils';
 import { useContext, useEffect } from 'react';
@@ -28,24 +29,28 @@ function Realtime() {
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {/* <Card title="Battery Status"> */}
       <BatteryGauge value={data.general[0].avg_soc} />
-      <div>
-        <DataItem
-          className="row-start-2"
-          label="Total Voltage"
-          variable={Variable.VOLTAGE}
-          value={data.general[0].total_voltage}
-          variant="horizontal"
-        />
-        <DataItem
-          className="row-start-2"
-          label="Total Current"
-          variable={Variable.CURRENT}
-          value={data.current}
-          variant="horizontal"
-        />
+      <div className='mx-5'>
+
+      <div className="flex w-full justify-center -mt-5">
+        <div className="grid text-slate-50 h-auto py-3 flex-grow card bg-gradient-to-tl from-sky-500 to-sky-200 rounded-box place-items-center">
+          <p className="leading-4 text-center">
+          <span className="text-xs block">Total Voltage</span>
+          <span className='text-center font-bold text-2xl'>{data.general[0].total_voltage.toFixed(2)}<small className="font-thin">{(Variable.VOLTAGE.space ? ' ' : '') + decode(Variable.VOLTAGE.unit)}</small></span>
+          </p>
+        </div>
+        <div className="divider divider-horizontal"></div>
+        <div className="grid text-slate-50 h-auto py-3 flex-grow card bg-gradient-to-tl from-emerald-500 to-emerald-200 rounded-box place-items-center">
+          <p className="leading-4 text-center">
+            <span className="text-xs block">Total Current</span>
+            <span className='text-center font-bold text-2xl'>{data.current.toFixed(2)}<small className="font-thin">{(Variable.CURRENT.space ? ' ' : '') + decode(Variable.CURRENT.unit)}</small></span>
+          </p>
+        </div>
       </div>
+
+      </div>
+
       {/* </Card> */}
-      <div className="grid grid-rows-3 gap-6 sm:grid-cols-3 sm:grid-rows-none">
+      <div className="grid grid-rows-3 gap-3 sm:grid-cols-3 sm:grid-rows-none">
         <DataInfo
           variable={Variable.VOLTAGE}
           min={data.general[0].min_voltage}
