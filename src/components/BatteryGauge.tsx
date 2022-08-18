@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import { getBatteryColor } from 'lib/battery';
 import { Props } from 'lib/utils';
 import {
@@ -15,7 +16,7 @@ interface BatteryGaugeProps extends Props {
 }
 
 function BatteryGauge({ value }: BatteryGaugeProps) {
-  // value = 25;
+  // value = 99;
   // const [fgFill, bgFill] = getBatteryFill(value);
   const capacity = value;
   const bcolor = getBatteryColor(capacity);
@@ -25,7 +26,7 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
   return (
     <div className="card w-full ">
       <div className="card-body -mt-7">
-        <h2 className="flex justify-center card-title mb-5 text-xs text-center font-bold tracking-wider text-slate-500">
+        <h2 className="card-title mb-5 flex justify-center text-center text-xs font-bold tracking-wider text-slate-500">
           Battery Status
         </h2>
         <div className="-mt-3 flex justify-center">
@@ -35,7 +36,7 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
               circleRatio={0.75}
               background
               backgroundPadding={6}
-              className="shadow-xl shadow-slate-300 bg-default rounded-full"
+              className="bg-default rounded-full shadow-xl shadow-slate-300"
               styles={buildStyles({
                 backgroundColor: 'transparent',
                 rotation: 1 / 2 + 1 / 8,
@@ -47,20 +48,11 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
               })}
             >
               <div className="flex justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-12"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke={bcolor}
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+                <Icon
+                  icon="ic:round-bolt"
+                  className="h-16 w-16"
+                  style={{ color: bcolor }}
+                />
               </div>
               <div className="mt-1 text-center ">
                 <p className="text-bold -mb-1 block text-xl font-bold text-sky-800">

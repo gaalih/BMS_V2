@@ -45,6 +45,7 @@ function Chart({ data, label, unit, domain, tickCount }: ChartProps) {
       <LineChart
         data={parsedData}
         margin={{ top: 5, right: 5, bottom: 16, left: 5 }}
+        style={{ fontFamily: 'Albert Sans' }}
       >
         <CartesianGrid />
         <XAxis
@@ -55,23 +56,45 @@ function Chart({ data, label, unit, domain, tickCount }: ChartProps) {
           ticks={timestamp}
           tickFormatter={timestampFormatter}
           padding="no-gap"
+          style={{ fontSize: '70%' }}
         >
-          <Label value="Time" dy={24} />
+          <Label
+            value="Time"
+            dy={24}
+            style={{
+              fontFamily: 'Albert Sans',
+              fontSize: '70%',
+              fill: '#294285',
+              fontWeight: 'bold',
+            }}
+          />
         </XAxis>
         <YAxis
           domain={domain}
           tickCount={tickCount}
           interval="preserveStartEnd"
           padding={{ top: 4 }}
+          style={{ fontSize: '70%' }}
         >
-          <Label value={`${label} (${unit})`} angle={-90} dx={-16} />
+          <Label
+            value={`${label} (${unit})`}
+            angle={-90}
+            dx={-16}
+            style={{
+              fontFamily: 'Albert Sans',
+              fontSize: '70%',
+              fill: '#294285',
+              fontWeight: 'bold',
+            }}
+          />
         </YAxis>
         <Tooltip
           labelFormatter={timestampFormatter}
           formatter={tooltipFormatter}
           separator=""
+          wrapperStyle={{ fontSize: '70%' }}
         />
-        <Line dataKey="value" dot={false} strokeWidth={2} stroke="#14b8a6" />
+        <Line dataKey="value" dot={false} strokeWidth={2} stroke="#0ea5e9" />
       </LineChart>
     </ResponsiveContainer>
   );

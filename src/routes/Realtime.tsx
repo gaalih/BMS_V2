@@ -1,7 +1,7 @@
 import { TimestampContext } from 'App';
 import BatteryCell from 'components/BatteryCell';
 import BatteryGauge from 'components/BatteryGauge';
-import Card from 'components/Card';
+// import Card from 'components/Card';
 import DataInfo from 'components/DataInfo';
 // import DataItem from 'components/DataItem';
 import { decode } from 'html-entities';
@@ -29,24 +29,33 @@ function Realtime() {
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {/* <Card title="Battery Status"> */}
       <BatteryGauge value={data.general[0].avg_soc} />
-      <div className='mx-5'>
-
-      <div className="flex w-full justify-center -mt-5">
-        <div className="grid text-slate-50 h-auto py-3 flex-grow card bg-gradient-to-tl from-sky-500 to-sky-200 rounded-box place-items-center">
-          <p className="leading-4 text-center">
-          <span className="text-xs block">Total Voltage</span>
-          <span className='text-center font-bold text-2xl'>{data.general[0].total_voltage.toFixed(2)}<small className="font-thin">{(Variable.VOLTAGE.space ? ' ' : '') + decode(Variable.VOLTAGE.unit)}</small></span>
-          </p>
+      <div className="mx-5">
+        <div className="-mt-5 flex w-full justify-center">
+          <div className="card rounded-box grid h-auto flex-grow place-items-center bg-gradient-to-tl from-sky-500 to-sky-200 py-3 text-slate-600 shadow-lg">
+            <p className="text-center leading-4">
+              <span className="block text-xs">Total Voltage</span>
+              <span className="text-center text-xl font-bold">
+                {data.general[0].total_voltage.toFixed(2) +
+                  (Variable.VOLTAGE.space ? ' ' : '')}
+                <small className="font-thin">
+                  {decode(Variable.VOLTAGE.unit)}
+                </small>
+              </span>
+            </p>
+          </div>
+          <div className="divider divider-horizontal"></div>
+          <div className="card rounded-box grid h-auto flex-grow place-items-center bg-gradient-to-tl from-emerald-500 to-emerald-200 py-3 text-slate-600 shadow-lg">
+            <p className="text-center leading-4">
+              <span className="block text-xs">Total Current</span>
+              <span className="text-center text-xl font-bold">
+                {data.current.toFixed(2) + (Variable.CURRENT.space ? ' ' : '')}
+                <small className="font-thin">
+                  {decode(Variable.CURRENT.unit)}
+                </small>
+              </span>
+            </p>
+          </div>
         </div>
-        <div className="divider divider-horizontal"></div>
-        <div className="grid text-slate-50 h-auto py-3 flex-grow card bg-gradient-to-tl from-emerald-500 to-emerald-200 rounded-box place-items-center">
-          <p className="leading-4 text-center">
-            <span className="text-xs block">Total Current</span>
-            <span className='text-center font-bold text-2xl'>{data.current.toFixed(2)}<small className="font-thin">{(Variable.CURRENT.space ? ' ' : '') + decode(Variable.CURRENT.unit)}</small></span>
-          </p>
-        </div>
-      </div>
-
       </div>
 
       {/* </Card> */}
@@ -70,13 +79,19 @@ function Realtime() {
           max={data.general[0].max_soc}
         />
       </div>
-      <Card title="Cell Status" className="lg:col-span-2">
-        <div className="grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-4 lg:grid-cols-5">
-          {data.value.map((item, idx) => (
-            <BatteryCell key={idx} value={item} />
-          ))}
+
+      <h2 className="card-title mt-5 mb-2 flex justify-center text-center text-xs font-bold tracking-wider text-slate-500">
+        Cell Status
+      </h2>
+      <div className="card rounded-box mb-20 bg-gradient-to-tl from-slate-50 to-white py-4 shadow-lg">
+        <div className="card-body -mt-5 -mb-5">
+          <div className="grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-4 lg:grid-cols-5">
+            {data.value.map((item, idx) => (
+              <BatteryCell key={idx} value={item} />
+            ))}
+          </div>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }

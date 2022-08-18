@@ -30,16 +30,24 @@ export class Variable {
     'Voltage',
     'V',
     true,
-    'emojione-monotone:high-voltage'
+    'ic:round-bolt',
+    '#f59e0b'
   );
   static readonly TEMPERATURE = new Variable(
-    'Temperature',
+    'Temp',
     '&deg;C',
     false,
-    'fluent:temperature-20-filled'
+    'fluent:temperature-24-regular',
+    '#06b6d4'
   );
-  static readonly CURRENT = new Variable('Current', 'A', true, '');
-  static readonly SOC = new Variable('SoC', '%', false, 'ic:baseline-percent');
+  static readonly CURRENT = new Variable('Current', 'A', true, '', '#10b981');
+  static readonly SOC = new Variable(
+    'SoC',
+    '%',
+    false,
+    'tabler:percentage',
+    '#84cc16'
+  );
 
   private constructor(
     // @ts-ignore
@@ -49,7 +57,8 @@ export class Variable {
     // @ts-ignore
     readonly space: boolean,
     // @ts-ignore
-    readonly icon: string
+    readonly icon: string,
+    readonly color: string
   ) {}
 }
 

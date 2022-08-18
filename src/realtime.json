@@ -1,139 +1,139 @@
 {
-  "current": 1.5, 
+  "current": 1.5,
   "general": [
     {
-      "avg_soc": 42.78, 
-      "avg_temperature": 25.19, 
-      "avg_voltage": 3.26, 
-      "max_soc": 100.0, 
-      "max_temperature": 29.28, 
-      "max_voltage": 4.39, 
-      "min_soc": 1.57, 
-      "min_temperature": 0.0, 
-      "min_voltage": 0.0, 
+      "avg_soc": 42.78,
+      "avg_temperature": 25.19,
+      "avg_voltage": 3.26,
+      "max_soc": 100.0,
+      "max_temperature": 29.28,
+      "max_voltage": 4.39,
+      "min_soc": 1.57,
+      "min_temperature": 0.0,
+      "min_voltage": 0.0,
       "total_voltage": 65.12
     }
-  ], 
-  "timestamp": "2022-07-12 14:18:19", 
+  ],
+  "timestamp": "2022-07-12 14:18:19",
   "value": [
     {
-      "modul": 1, 
-      "soc": 58.18, 
-      "temperature": 28.03, 
+      "modul": 1,
+      "soc": 58.18,
+      "temperature": 28.03,
       "voltage": 3.7
-    }, 
+    },
     {
-      "modul": 2, 
-      "soc": 35.29, 
-      "temperature": 27.78, 
+      "modul": 2,
+      "soc": 35.29,
+      "temperature": 27.78,
       "voltage": 3.49
-    }, 
+    },
     {
-      "modul": 3, 
-      "soc": 35.29, 
-      "temperature": 28.12, 
+      "modul": 3,
+      "soc": 35.29,
+      "temperature": 28.12,
       "voltage": 3.49
-    }, 
+    },
     {
-      "modul": 4, 
-      "soc": 1.57, 
-      "temperature": 0.0, 
+      "modul": 4,
+      "soc": 1.57,
+      "temperature": 0.0,
       "voltage": 0.0
-    }, 
+    },
     {
-      "modul": 5, 
-      "soc": 23.3, 
-      "temperature": 28.03, 
+      "modul": 5,
+      "soc": 23.3,
+      "temperature": 28.03,
       "voltage": 3.38
-    }, 
+    },
     {
-      "modul": 6, 
-      "soc": 59.27, 
-      "temperature": 27.28, 
+      "modul": 6,
+      "soc": 59.27,
+      "temperature": 27.28,
       "voltage": 3.71
-    }, 
+    },
     {
-      "modul": 7, 
-      "soc": 47.28, 
-      "temperature": 28.37, 
+      "modul": 7,
+      "soc": 47.28,
+      "temperature": 28.37,
       "voltage": 3.6
-    }, 
+    },
     {
-      "modul": 8, 
-      "soc": 47.28, 
-      "temperature": 27.84, 
+      "modul": 8,
+      "soc": 47.28,
+      "temperature": 27.84,
       "voltage": 3.6
-    }, 
+    },
     {
-      "modul": 1, 
-      "soc": 58.18, 
-      "temperature": 27.96, 
+      "modul": 1,
+      "soc": 58.18,
+      "temperature": 27.96,
       "voltage": 3.7
-    }, 
+    },
     {
-      "modul": 2, 
-      "soc": 34.2, 
-      "temperature": 27.68, 
+      "modul": 2,
+      "soc": 34.2,
+      "temperature": 27.68,
       "voltage": 3.48
-    }, 
+    },
     {
-      "modul": 3, 
-      "soc": 35.29, 
-      "temperature": 28.06, 
+      "modul": 3,
+      "soc": 35.29,
+      "temperature": 28.06,
       "voltage": 3.49
-    }, 
+    },
     {
-      "modul": 4, 
-      "soc": 1.57, 
-      "temperature": 0.0, 
+      "modul": 4,
+      "soc": 1.57,
+      "temperature": 0.0,
       "voltage": 0.0
-    }, 
+    },
     {
-      "modul": 5, 
-      "soc": 24.39, 
-      "temperature": 28.09, 
+      "modul": 5,
+      "soc": 24.39,
+      "temperature": 28.09,
       "voltage": 3.39
-    }, 
+    },
     {
-      "modul": 6, 
-      "soc": 59.27, 
-      "temperature": 27.18, 
+      "modul": 6,
+      "soc": 59.27,
+      "temperature": 27.18,
       "voltage": 3.71
-    }, 
+    },
     {
-      "modul": 7, 
-      "soc": 45.1, 
-      "temperature": 28.34, 
+      "modul": 7,
+      "soc": 45.1,
+      "temperature": 28.34,
       "voltage": 3.58
-    }, 
+    },
     {
-      "modul": 8, 
-      "soc": 47.28, 
-      "temperature": 27.84, 
+      "modul": 8,
+      "soc": 47.28,
+      "temperature": 27.84,
       "voltage": 3.6
-    }, 
+    },
     {
-      "modul": 9, 
-      "soc": 44.01, 
-      "temperature": 27.68, 
+      "modul": 9,
+      "soc": 44.01,
+      "temperature": 27.68,
       "voltage": 3.57
-    }, 
+    },
     {
-      "modul": 10, 
-      "soc": 100.0, 
-      "temperature": 29.28, 
+      "modul": 10,
+      "soc": 100.0,
+      "temperature": 29.28,
       "voltage": 4.39
-    }, 
+    },
     {
-      "modul": 11, 
-      "soc": 49.46, 
-      "temperature": 27.96, 
+      "modul": 11,
+      "soc": 49.46,
+      "temperature": 27.96,
       "voltage": 3.62
-    }, 
+    },
     {
-      "modul": 12, 
-      "soc": 49.46, 
-      "temperature": 28.28, 
+      "modul": 12,
+      "soc": 49.46,
+      "temperature": 28.28,
       "voltage": 3.62
     }
   ]
