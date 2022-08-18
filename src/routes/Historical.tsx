@@ -26,7 +26,7 @@ function Historical() {
           </span>
         </label>
         <select
-          className="select-bordered select text-xs text-slate-600"
+          className="select-bordered select bg-slate-50 text-xs text-slate-600"
           value={module}
           onChange={e => {
             setModule(Number(e.target.value));
@@ -41,7 +41,7 @@ function Historical() {
       </div>
 
       {data && (
-        <div className="mb-20 grid grid-cols-1 gap-7 py-8">
+        <div className="grid grid-cols-1 gap-7 py-8 pb-32">
           <div className="card rounded-box bg-gradient-to-tl from-slate-50 to-white p-5 pl-2 shadow-lg">
             <Chart
               data={data.chart_voltage}

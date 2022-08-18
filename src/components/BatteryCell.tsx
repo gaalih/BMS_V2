@@ -55,7 +55,7 @@ function BatteryCell({ value }: BatteryCellProps) {
     <div>
       <div className="flex justify-center">
         <div className="indicator">
-          <span className="badge text-2xs indicator-end indicator-bottom indicator-item rounded-full border-0 bg-sky-400 px-3 font-bold">
+          <span className="badge text-2xs indicator-end indicator-item indicator-top rounded-full border-0 bg-sky-400 px-3 font-bold text-white">
             {value.modul}
           </span>
           <BatteryGauge
