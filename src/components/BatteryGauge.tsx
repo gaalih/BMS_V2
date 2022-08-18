@@ -30,7 +30,7 @@ function BatteryGauge({ value }: BatteryGaugeProps) {
           Battery Status
         </h2>
         <div className="-mt-3 flex justify-center">
-          <div className="w-5/6">
+          <div className="w-5/6 sm:w-4/6">
             <CircularProgressbarWithChildren
               value={capacity}
               circleRatio={0.75}

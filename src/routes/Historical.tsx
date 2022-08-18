@@ -41,7 +41,7 @@ function Historical() {
       </div>
 
       {data && (
-        <div className="grid grid-cols-1 gap-7 py-8 pb-32">
+        <div className="grid grid-cols-1 gap-7 py-8 pb-32 sm:grid-cols-2">
           <div className="card rounded-box bg-gradient-to-tl from-slate-50 to-white p-5 pl-2 shadow-lg">
             <Chart
               data={data.chart_voltage}

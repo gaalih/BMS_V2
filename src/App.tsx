@@ -9,13 +9,13 @@ function App() {
   const [timestamp, setTimestamp] = useState<string | null>(null);
   return (
     <TimestampContext.Provider value={{ timestamp, setTimestamp }}>
-      <div className="min-h-screen text-gray-900">
+      <div className="min-h-screen">
         <header className="hidden sm:inline">
-          <h1 className="mb-4 bg-teal-100 p-4 text-center text-2xl">
+          {/* <h1 className="mb-4 p-4 text-center text-2xl font-extrabold tracking-wider">
             Battery Management System
-          </h1>
+          </h1> */}
         </header>
-        <main className="mx-auto max-w-screen-sm space-y-4 px-4 pt-5 sm:pt-0 lg:max-w-screen-lg">
+        <main className="mx-auto w-full space-y-4 px-4 pt-5">
           <Tab />
           <Outlet />
         </main>

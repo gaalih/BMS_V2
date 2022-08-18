@@ -21,12 +21,12 @@ function DataInfo({ variable, min, average, max }: DataInfoProps) {
   return (
     // <div className='flex justify-center'>
 
-    <div className="rounded-box grid grid-cols-4 place-items-center gap-1 bg-gradient-to-tl from-slate-50 to-white py-4 text-slate-500 shadow-lg">
+    <div className="rounded-box grid grid-cols-4 place-items-center gap-1 bg-gradient-to-tl from-slate-50 to-white py-4 text-slate-500 shadow-lg sm:py-2">
       <div
         className={`text-center leading-3`}
         style={{ color: variable.color }}
       >
-        <Icon icon={variable.icon} className="h-12 w-12" />
+        <Icon icon={variable.icon} className="h-12 w-12 sm:h-9 sm:w-9" />
         <small>{variable.label}</small>
       </div>
       <div className="">

@@ -92,7 +92,7 @@ function BatteryCell({ value }: BatteryCellProps) {
                 animationDuration: 2000,
               },
             }}
-            size={110}
+            size={100}
             animated={true}
             className="-mr-1"
           />

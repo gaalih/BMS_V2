@@ -42,30 +42,41 @@ function Tab() {
       {/* end navigasi mobile */}
 
       {/* navigasi desktop */}
-      <div className="grid grid-cols-2 gap-2">
-        <div className="">
-          <div className="tabs tabs-boxed hidden gap-4 sm:inline">
+      <div className="grid grid-cols-2 sm:grid-cols-3">
+        <div className="w-2/3 sm:w-1/2">
+          <p className="text-sm font-bold leading-[1.1rem] tracking-wide text-slate-500 sm:text-xl sm:tracking-wider">
+            Battery Management System
+          </p>
+        </div>
+
+        <div className="hidden pl-10 sm:inline">
+          <div className="tabs gap-4">
             <NavLink
               to="realtime"
               className={({ isActive }) =>
-                `${isActive ? 'tab-active' : ''} tab`
+                `${
+                  isActive
+                    ? 'tab-active bg-gradient-to-tl from-slate-50 to-white text-cyan-500'
+                    : ''
+                } tab tab-lifted tab-lg text-sm font-bold tracking-wider hover:text-cyan-500`
               }
             >
+              <Icon icon="fluent:live-24-filled" className="mr-1 h-5 w-5" />
               Realtime
             </NavLink>
             <NavLink
               to="historical"
               className={({ isActive }) =>
-                `${isActive ? 'tab-active' : ''} tab`
+                `${
+                  isActive
+                    ? 'tab-active bg-gradient-to-tl from-slate-50 to-white text-cyan-500'
+                    : ''
+                } tab tab-lifted tab-lg text-sm font-bold tracking-wider hover:text-cyan-500`
               }
             >
+              <Icon icon="fontisto:history" className="mr-1 h-3 w-3" />
               Historical
             </NavLink>
-          </div>
-          <div className="w-3/4">
-            <p className="text-sm font-bold leading-[1.1rem] tracking-wide text-slate-500">
-              Battery Management System
-            </p>
           </div>
         </div>
 
