@@ -3027,11 +3027,6 @@ html{
   margin-right: 0.5rem;
 }
 
-.my-44{
-  margin-top: 11rem;
-  margin-bottom: 11rem;
-}
-
 .mx-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -3493,14 +3488,14 @@ html{
   padding-bottom: 2rem;
 }
 
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .py-44{
   padding-top: 11rem;
   padding-bottom: 11rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .pt-5{

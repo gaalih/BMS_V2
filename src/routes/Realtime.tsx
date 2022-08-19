@@ -67,7 +67,6 @@ function Realtime() {
             </div>
           </div>
         </div>
-
         {/* </Card> */}
         <div className="mt-5 grid grid-rows-3 gap-3 sm:grid-rows-none">
           <DataInfo

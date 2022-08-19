@@ -2,9 +2,6 @@ import { format } from 'date-fns';
 import React from 'react';
 import { Data } from './battery';
 import { ModuleData } from './module';
-// sample API
-import RealtimeJson from '../realtime.json';
-import HistoricalJson from '../historical.json';
 
 export interface Props {
   className?: string;
@@ -21,23 +18,18 @@ export function classNames(...classes: string[]) {
 }
 
 export async function fetchRealtime() {
-  // const response = await fetch(
-  //   `${process.env.REACT_APP_DATA_PROVIDER}/realtime`
-  // );
-  // return (await response.json()) as Data;
-  const data = RealtimeJson as Data;
-  return data;
+  const response = await fetch(
+    `${process.env.REACT_APP_DATA_PROVIDER}/realtime`
+  );
+  return (await response.json()) as Data;
 }
 
 // export async function fetchHistorical(0) {
 export async function fetchHistorical(module: number) {
-  // const response = await fetch(
-  //   `${process.env.REACT_APP_DATA_PROVIDER}/historical?modul=${module}`
-  // );
-  // return (await response.json()) as ModuleData;
-  console.log(module);
-  const data = HistoricalJson as ModuleData;
-  return data;
+  const response = await fetch(
+    `${process.env.REACT_APP_DATA_PROVIDER}/historical?modul=${module}`
+  );
+  return (await response.json()) as ModuleData;
 }
 
 export function timestampFormatter(timestamp: number) {
