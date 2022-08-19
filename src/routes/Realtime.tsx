@@ -24,7 +24,14 @@ function Realtime() {
   }, [data, setTimestamp]);
 
   return !data ? (
-    <p>Loading...</p>
+    <div className="mb-96 grid h-auto grid-cols-12 place-content-center gap-4 py-44 sm:mb-80">
+      <div className="col-span-3 sm:col-span-5"></div>
+      <div className="col-span-6 sm:col-span-2">
+        <progress className="progress h-5 w-full"></progress>
+        <p className="text-center">Loading...</p>
+      </div>
+      <div className="col-span-3 sm:col-span-5"></div>
+    </div>
   ) : (
     <div className="grid grid-cols-1 sm:grid-cols-3">
       {/* <Card title="Battery Status"> */}
