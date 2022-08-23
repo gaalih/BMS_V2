@@ -97,7 +97,7 @@ function Realtime() {
         </h2>
         <div className="card rounded-box mb-20 bg-gradient-to-tl from-slate-50 to-white py-4 shadow-lg">
           <div className="card-body -mt-5 -mb-5">
-            <div className="grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-4 lg:grid-cols-5">
+            <div className="grid grid-cols-2 justify-items-center gap-8 sm:grid-cols-4">
               {data.value.map((item, idx) => (
                 <BatteryCell key={idx} value={item} />
               ))}
